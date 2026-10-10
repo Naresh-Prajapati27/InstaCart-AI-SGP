@@ -527,23 +527,56 @@ export const AIEventsRecommendationModal: React.FC<AIEventsRecommendationModalPr
   const isOverBudget = totalAmount > userBudget;
   const overAmount = Math.max(0, totalAmount - userBudget);
 
-  // Apply Cheaper Alternatives / Budget Saver
+
+  // Apply Budget Saver: reduce quantities until the basket fits the budget
   const handleApplyCheaperAlternatives = () => {
     setSelectedItemsMap((prev) => {
-      const updated: Record<string, { product: Product; quantity: number; reason?: string }> = {};
+      const updated: Record<
+        string,
+        { product: Product; quantity: number; reason?: string }
+      > = {};
+
       Object.entries(prev).forEach(([key, val]) => {
-        const itemVal = val as { product: Product; quantity: number; reason?: string };
-        const newQty = Math.max(1, Math.floor(itemVal.quantity * 0.7));
-        updated[key] = {
-          ...itemVal,
-          quantity: newQty,
-          reason: 'Optimized quantity to fit budget',
+        const item = val as {
+          product: Product;
+          quantity: number;
+          reason?: string;
         };
+
+        updated[key] = { ...item };
       });
+
+      const getTotal = () =>
+        Object.values(updated).reduce(
+          (sum, item) => sum + item.product.price * item.quantity,
+          0
+        );
+
+      // Reduce the most expensive quantities first.
+      while (getTotal() > userBudget) {
+        const candidates = Object.entries(updated)
+          .filter(([, item]) => item.quantity > 1)
+          .sort(
+            ([, a], [, b]) =>
+              b.product.price - a.product.price
+          );
+
+        if (candidates.length === 0) break;
+
+        const [key, item] = candidates[0];
+        updated[key] = {
+          ...item,
+          quantity: item.quantity - 1,
+          reason: "Quantity optimized to reduce event cost",
+        };
+      }
+
       return updated;
     });
+
     setIsCheaperApplied(true);
   };
+
 
   const handleAddAllToBasket = () => {
     if (selectedList.length === 0) return;

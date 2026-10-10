@@ -2288,7 +2288,7 @@ app.post("/api/ai/shopping-chatbot", async (req, res) => {
     }
 
     const matches = products.filter((p) => {
-      const pText = `${p.name} ${p.categoryName} ${p.description || ''} ${p.dietaryTags.join(' ')}`.toLowerCase();
+     const pText = `${p.name || ''} ${p.categoryName || ''} ${p.description || ''} ${(p.dietaryTags || []).join(' ')}`.toLowerCase();
       return keywords.some((kw) => pText.includes(kw));
     });
 

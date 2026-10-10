@@ -356,9 +356,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <input
                     type="text"
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onInput={(e) => setSearchQuery(e.currentTarget.value)}
                     placeholder="Search organic fruits, sourdough, milk or ask AI..."
-                    className="w-full bg-slate-100/80 hover:bg-slate-100 focus:bg-white text-slate-900 text-xs pl-10 pr-20 py-2.5 rounded-xl border border-transparent focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all placeholder:text-slate-400 font-medium"
+                    className="w-full bg-white text-black text-base pl-10 pr-20 py-2.5 rounded-xl border-2 border-red-500 outline-none"
                   />
                   {searchQuery && (
                     <button

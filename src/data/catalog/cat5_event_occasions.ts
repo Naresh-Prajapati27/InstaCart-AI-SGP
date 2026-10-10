@@ -1,7 +1,7 @@
 ﻿import { Product } from '../../types';
 
 const sparklingPremiumJuiceImg =
-  'https://sunbeamventures.in/cdn/shop/files/Valentino-Sparkling-Red-Grape-Juice-750ml.jpg';
+  'https://sunbeamventures.in/cdn/shop/products/1_aa697967-bd24-4719-add0-d6fdd0a729ec.jpg?v=1777111431&width=800';
 export const EVENT_OCCASION_PRODUCTS: Product[] = [
   // ðŸ’ MARRIAGE ANNIVERSARY / ROMANTIC DINNER
   {
@@ -12,7 +12,8 @@ export const EVENT_OCCASION_PRODUCTS: Product[] = [
     categoryName: 'Bakery & Desserts',
     price: 550,
     unit: '500g cake',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80',
+    image: '/products/bakery-desserts/bd_10-red-velvet-cupcakes.jpg',
+    images: ['/products/bakery-desserts/bd_10-red-velvet-cupcakes.jpg'],
     rating: 4.9,
     reviewsCount: 310,
     stock: 25,
@@ -35,22 +36,22 @@ images: ['https://www.1800giftportal.com/media/catalog/product/cache/1/image/0dc
     dietaryTags: ['Vegetarian', 'Imported'],
     description: 'Whole crunchy hazelnut in delicious creamy filling inside crispy wafer shell wrapped in golden foil.',
   },
-  {
-    id: 'prod_anniv_juice',
-    name: 'Sparkling Premium Juice Bottle',
-    brand: 'Santenal',
-    category: 'beverages',
-    categoryName: 'Cold Drinks & Beverages',
-    price: 240,
-    unit: '750ml bottle',
+ {
+  id: 'bev_21',
+  name: 'Sparkling Premium Juice Bottle',
+  brand: 'Santenal',
+  category: 'beverages',
+  categoryName: 'Cold Drinks & Beverages',
+  price: 240,
+  unit: '750ml bottle',
   image: sparklingPremiumJuiceImg,
-images: [sparklingPremiumJuiceImg],
-    rating: 4.8,
-    reviewsCount: 180,
-    stock: 30,
-    dietaryTags: ['Non-Alcoholic', '100% Juice', 'Vegan'],
-    description: 'Celebratory non-alcoholic sparkling grape beverage perfect for anniversary toasts.',
-  },
+  images: [sparklingPremiumJuiceImg],
+  rating: 4.8,
+  reviewsCount: 180,
+  stock: 30,
+  dietaryTags: ['Non-Alcoholic', '100% Juice', 'Vegan'],
+  description: 'Celebratory non-alcoholic sparkling grape beverage perfect for anniversary toasts.',
+},
   {
     id: 'prod_anniv_fruits',
     name: 'Fresh Exotic Kiwis & Strawberries',
@@ -104,7 +105,8 @@ images: [sparklingPremiumJuiceImg],
     categoryName: 'Bakery & Desserts',
     price: 95,
     unit: '1 loaf',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&q=80',
+    image: '/products/bakery-desserts/bd_7-garlic-baguette.jpg',
+    images: ['/products/bakery-desserts/bd_7-garlic-baguette.jpg'],
     rating: 4.7,
     reviewsCount: 140,
     stock: 30,
@@ -119,7 +121,8 @@ images: [sparklingPremiumJuiceImg],
     categoryName: 'Bakery & Desserts',
     price: 140,
     unit: '2 pcs',
-    image: 'https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=500&q=80',
+    image: '/products/bakery-desserts/bd_18-chocolate-lava.jpg',
+    images: ['/products/bakery-desserts/bd_18-chocolate-lava.jpg'],
     rating: 4.9,
     reviewsCount: 220,
     stock: 25,
@@ -167,7 +170,8 @@ images: ['https://www.thegreenfuels.com/cdn/shop/files/Royal-Indulgence-Luxury-G
     categoryName: 'Bakery & Desserts',
     price: 450,
     unit: '500g cake',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80',
+    image: '/products/bakery-desserts/bd_2-chocolate-truffle-cake.jpg',
+    images: ['/products/bakery-desserts/bd_2-chocolate-truffle-cake.jpg'],
     rating: 4.9,
     reviewsCount: 520,
     stock: 30,
@@ -259,8 +263,8 @@ images: ['https://www.thegreenfuels.com/cdn/shop/files/Royal-Indulgence-Luxury-G
   categoryName: 'Oils & Spices',
   price: 325,
   unit: '500g jar',
-  image: '/src/assets/images/amul_pure_cow_ghee.jpg',
-  images: ['/src/assets/images/amul_pure_cow_ghee.jpg'],
+  image: 'https://f.nooncdn.com/p/pzsku/ZEFE61F166F6F8F125D48Z/45/1753566475/66c15de6-d47c-4812-ad56-ce3cd4b26b70.jpg',
+images: ['https://f.nooncdn.com/p/pzsku/ZEFE61F166F6F8F125D48Z/45/1753566475/66c15de6-d47c-4812-ad56-ce3cd4b26b70.jpg'],
   rating: 4.9,
   reviewsCount: 680,
   stock: 50,
@@ -395,6 +399,9 @@ images: ['https://haldirams.com/cdn/shop/files/Kaju-Katli.jpg'],
     description: 'Non-toxic vibrant herbal powder color pack for floor rangoli decorations.',
   }
 ];
+
+
+
 
 
 
